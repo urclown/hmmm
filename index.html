@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kucing untuk Kebahagiaanmu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+        h1 {
+            color: #ff69b4;
+            margin-bottom: 20px;
+        }
+        img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 10px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #ff69b4;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff1493;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gabole emosi-emosi adiss cantik</h1>
+        <img id="catImage" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmI0NnQ3OGl4bGZ6ZTR1aW83d2ZiZGRqcmhldjQxZjZrNjZkNHowbCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/MDJ9IbxxvDUQM/giphy.gif" alt="Kucing Lucu">
+        <button onclick="changeImage()">Next</button>
+    </div>
+
+    <script>
+        function changeImage() {
+            const images = [
+                "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmI0NnQ3OGl4bGZ6ZTR1aW83d2ZiZGRqcmhldjQxZjZrNjZkNHowbCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/MDJ9IbxxvDUQM/giphy.gif",
+                "https://media.giphy.com/media/8vQSQ3cNXuDGo/giphy.gif?cid=790b7611nb46t78ixlfze4uio7wfbddjrhev41f6k66d4z0l&ep=v1_gifs_search&rid=giphy.gif&ct=g",
+                "https://media.giphy.com/media/E0cyxhawhe9dm/giphy.gif?cid=790b7611nb46t78ixlfze4uio7wfbddjrhev41f6k66d4z0l&ep=v1_gifs_search&rid=giphy.gif&ct=g"
+            ];
+            const imgElement = document.getElementById("catImage");
+            const currentImage = imgElement.src;
+            let newIndex = (images.indexOf(currentImage) + 1) % images.length;
+            imgElement.src = images[newIndex];
+        }
+    </script>
+</body>
+</html>
